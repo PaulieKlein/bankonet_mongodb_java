@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import org.bson.Document;
 
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -57,6 +58,25 @@ Logger.getLogger("").setLevel(Level.SEVERE);
     			mongoClient.close();
     			System.out.println("Arrêt de l'application");
     			System.exit(0);
+    		break;
+    		
+    		case 1:
+    			Iterator<Document> iter = collection.find().iterator();
+    			List<Document> listCC;
+		        while (iter.hasNext()) {
+		        	
+		        	Document tmp = iter.next();
+		        	listCC = (List<Document>) tmp.get("Compte Courant") ;	
+		        	Iterator<Document> compteIte =  listCC.iterator();
+		    	    while (compteIte.hasNext()) {
+		    	    	Document compte = (Document) compteIte.next();
+		    	    	System.out.println("Informations Comptes Courants :\nLibelle : "+compte.get("Libelle") + 
+				        		   "\nSolde : "+compte.get("Solde") +"\n");
+
+		            }
+		        	
+		            
+		        }
     		break;
 		
     		}

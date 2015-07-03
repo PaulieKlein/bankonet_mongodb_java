@@ -62,7 +62,7 @@ public class ConseillerMain {
 								
 				
 				Document cc = new Document()
-								.append("Libelle",libelle)
+								.append("Libelle",libelle.toUpperCase())
 								.append("Solde",solde);
 				
 				List<Document> listDoc = new ArrayList<Document>();

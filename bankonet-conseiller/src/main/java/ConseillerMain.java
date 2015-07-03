@@ -93,13 +93,7 @@ public class ConseillerMain {
 			default :
 				mongoClient.close();
 				System.out.println("Arrêt de l'application");
-		}
-		if(choice==1){
-			
-			
-			
-		} else {
-			
+				System.exit(0);
 		}
 		
 		
